@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdmuserController;
+use App\Http\Controllers\navbarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,9 @@ Route::controller(AdmuserController::class)->group(function(){
     Route::put('/softdelete/admin/{id}','softdelete')->name('admin.softdelete');
     Route::get('/pesan/admin', 'pemesanan')->name('admin.pemesanan');
 });
+
+// Route::get('/welcomepageee', function () {
+//     return view('welcomepageee');
+// });
+
+Route::resource('/welcomepageee', navbarController::class);
