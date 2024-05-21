@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DatacustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+// Route::post('/datacustomer/kirim','store', function () {
+//     return view('datacustomer.store');
+// });
+// Route::get('/layout.home', function () {
+//     return view('layout.home');
+// });
+
+Route::controller(DatacustomerController::class)->group(function(){
+    Route::get('/datacustomer','index')->name('datacustomer.index');
+    Route::post('/datacustomer/kirim','store')->name('datacustomer.store');
+    Route::get('/form','indexForm')->name('form.index');
 });
+
