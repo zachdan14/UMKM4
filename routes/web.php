@@ -15,9 +15,14 @@ use App\Http\Controllers\navbarController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/welcomepage', function () {
+    return view('welcomepage');
 });
+Route::get('/about', function () {
+    return view('about');
+});
+
+
 
 Route::controller(AdmuserController::class)->group(function(){
     Route::get('/admin', 'index')->name('admin.index');
@@ -32,10 +37,7 @@ Route::controller(AdmuserController::class)->group(function(){
     Route::get('/hapusakun/admin/{id}', 'hapusakun')->name('admin.hapusakun');
     Route::put('/softdelete/admin/{id}','softdelete')->name('admin.softdelete');
     Route::get('/pesan/admin', 'pemesanan')->name('admin.pemesanan');
+    
 });
 
-// Route::get('/welcomepageee', function () {
-//     return view('welcomepageee');
-// });
 
-Route::resource('/welcomepageee', navbarController::class);

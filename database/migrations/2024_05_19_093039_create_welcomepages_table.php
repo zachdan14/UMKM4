@@ -6,12 +6,14 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    
+    /**
+     * Run the migrations.
+     */
     public function up(): void
     {
-        Schema::create('navbars', function (Blueprint $table) {
+        Schema::create('welcomepages', function (Blueprint $table) {
             $table->id();
-            $table->string('logo');
+            $table->timestamps();
         });
     }
 
@@ -20,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('welcomepages');
     }
 };

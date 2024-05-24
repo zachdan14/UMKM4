@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Add icon library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
+@extends('user/layout/navbar')
+@section('content')
     <!-- Your content here -->
 
     <!-- Bootstrap Bundle with Popper.js (Optional) -->
@@ -19,7 +7,8 @@
 
     <nav class="navbar navbar-expand-lg fixed-top bg-light navbar-light">
     <div class="container">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="">
+        
       <img
         id="MDB-logo"
         src="assets/logooooo.png"
@@ -27,6 +16,8 @@
         draggable="false"
         height="70"/>
       </a>
+      <div id="#Home">
+       <div class="Home">
     <button
       class="navbar-toggler"
       type="button"
@@ -37,40 +28,42 @@
       aria-label="Toggle navigation">
       <i class="fas fa-bars"></i>
     </button>
+    
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto align-items-center">
         <li class="nav-item">
-            {{ $navbars }}
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">GoFotograper</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#!"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
+          <a class="nav-link" href="#Home"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#!"><i class="fas fa-bell pe-2"></i>Layanan kami</a>
+          <a class="nav-link" href="#layanan"><i class="fas fa-bell pe-2"></i>Layanan kami</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#!"><i class="fa fa-commenting" aria-hidden="true"></i>medsos</a>
+          <a class="nav-link" href="http://127.0.0.1:8000/about"><i class="fa fa-commenting" aria-hidden="true"></i>About</a>
         </li>
         </li>
         <a href="#" class="nav-item user-icon"><i class="fas fa-user"></i></a> <!-- Ikon User -->
       </ul>
       </div>
       </div>
+      </div>
+      </div>
 </nav>
   <div class="huruf-1 container">
     <text>Ini Dia Fotografer Mari Jelajahi </text>
     <button class="btn-rounded">disini</button>
-    <img src="assets/fotoiklann.jpeg" class="responsive" alt="Norway">
+    <img src="assets/iklannn2.jpg" class="responsive" alt="Norway">
 
 </div>
+<div id="layanan">
 <div class="layanan">
 <p >Layanan Kami</p>
 </div>
 <div>
+</div>
 <center><button disabled class="btn-1 my-3"><i class="fa fa-camera" style="font-size:20px" ></i>Foto</button></center>
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-
 <section class="hero-section">
   <div class="card-grid">
     <a class="card" href="#">
@@ -172,13 +165,14 @@
   color: black;
   font-family: 'Times New Roman', serif;
   text-align: left; /* Menggeser font ke kiri */
-  padding: 40px 40px;
+  padding: 20px 20px;
   margin-right: 80px;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 19px;
   font-weight: bold;
-  height: 10px;
+  
  }
+ 
 
  body {
   margin: 0;
@@ -209,13 +203,14 @@
   margin-top:20px;
         }
 .layanan{
-  background: white; width:100%; height:30%;
+  background: white; width:100%; height:3%;
   background-size:cover;
   font-size:30px;
   font-family:'times New Roman',serif;
   text-align:center;
   color:black;
-  margin-top:90px;
+  margin-top:30px;
+
   border-radius:10px;
   
 }
@@ -365,4 +360,5 @@ html{
 
 </body>
 </html>
-https://vt.tiktok.com/ZSYdameY2/
+
+@endsection
