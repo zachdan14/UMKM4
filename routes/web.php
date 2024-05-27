@@ -1,7 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+<<<<<<< HEAD
+use App\Http\Controllers\DatacustomerController;
+=======
 use App\Http\Controllers\AdmuserController;
+use App\Http\Controllers\navbarController;
+>>>>>>> 8251b54eb31068e8aef4df358cb9991f9800c7ae
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +19,23 @@ use App\Http\Controllers\AdmuserController;
 |
 */
 
-Route::get('/backup', function () {
-    return view('backup');
+
+
+// Route::post('/datacustomer/kirim','store', function () {
+//     return view('datacustomer.store');
+// });
+// Route::get('/layout.home', function () {
+//     return view('layout.home');
+// });
+
+Route::controller(DatacustomerController::class)->group(function(){
+    Route::get('/datacustomer','index')->name('datacustomer.index');
+    Route::post('/datacustomer/kirim','store')->name('datacustomer.store');
+    Route::get('/form','indexForm')->name('form.index');
 });
 
+<<<<<<< HEAD
+=======
 Route::controller(AdmuserController::class)->group(function(){
     Route::get('/admin', 'index')->name('admin.index');
     
@@ -37,3 +55,10 @@ Route::controller(AdmuserController::class)->group(function(){
     Route::get('/delete/admin/{id}', 'delete')->name('admin.delete');
     Route::get('/pesan/admin', 'pemesanan')->name('admin.pemesanan');
 });
+
+// Route::get('/welcomepageee', function () {
+//     return view('welcomepageee');
+// });
+
+Route::resource('/welcomepageee', navbarController::class);
+>>>>>>> 8251b54eb31068e8aef4df358cb9991f9800c7ae
