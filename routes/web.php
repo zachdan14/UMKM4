@@ -14,8 +14,8 @@ use App\Http\Controllers\AdmuserController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/backup', function () {
+    return view('backup');
 });
 
 Route::controller(AdmuserController::class)->group(function(){
@@ -28,7 +28,12 @@ Route::controller(AdmuserController::class)->group(function(){
     Route::post('/save/admin', 'saveakun')->name('admin.saveakun');
     Route::get('/editakun/admin/{id}', 'editakun')->name('admin.editakun');
     Route::put('/updateakun/admin/{id}', 'updateakun')->name('admin.updateakun');
-    Route::get('/hapusakun/admin/{id}', 'hapusakun')->name('admin.hapusakun');
+    Route::get('/softdeleteakun/admin/{id}', 'softdeleteakun')->name('admin.softdeleteakun');
     Route::put('/softdelete/admin/{id}','softdelete')->name('admin.softdelete');
+    Route::get('/balikakun/admin/{id}', 'balikakun')->name('admin.balikakun');
+    Route::put('/coveryakun/admin/{id}','coveryakun')->name('admin.coveryakun');
+    Route::get('/detailakun/admin/{id}', 'detailakun')->name('admin.detailakun');
+    Route::get('/deleteakun/admin/{id}', 'deleteakun')->name('admin.deleteakun');
+    Route::get('/delete/admin/{id}', 'delete')->name('admin.delete');
     Route::get('/pesan/admin', 'pemesanan')->name('admin.pemesanan');
 });
