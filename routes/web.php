@@ -1,12 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-<<<<<<< HEAD
 use App\Http\Controllers\DatacustomerController;
-=======
 use App\Http\Controllers\AdmuserController;
 use App\Http\Controllers\navbarController;
->>>>>>> 8251b54eb31068e8aef4df358cb9991f9800c7ae
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,8 +32,29 @@ Route::controller(DatacustomerController::class)->group(function(){
     Route::get('/form','indexForm')->name('form.index');
 });
 
-<<<<<<< HEAD
-=======
+// {{-- login (willy thing) --}}
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/login-proses', [LoginController::class, 'login_proses'])->name('login.proses');
+// {{-- register (willy thing) --}}
+Route::get('/register', [LoginController::class, 'register'])->name('register');
+Route::post('/register-proses', [LoginController::class, 'register_proses'])->name('register.proses');
+// log out
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+// biar saat login auto ke halaman masing-masing
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin/home', function () {
+        return view('admin.home'); // admin
+    })->name('admin.home');
+    Route::get('/home', function () {
+        return view('home'); // user
+    })->name('home');
+});
+Route::middleware(['auth', 'is_admin'])->group(function () {
+    Route::post('/admin/user/{id}/deactivate', [LoginController::class, 'deactivateUser'])->name('admin.user.deactivate');
+    Route::post('/admin/user/{id}/activate', [LoginController::class, 'activateUser'])->name('admin.user.activate');
+});
+// ^^^willy thing^^^
+
 Route::controller(AdmuserController::class)->group(function(){
     Route::get('/admin', 'index')->name('admin.index');
     
@@ -56,4 +75,3 @@ Route::controller(AdmuserController::class)->group(function(){
 // });
 
 Route::resource('/welcomepageee', navbarController::class);
->>>>>>> 8251b54eb31068e8aef4df358cb9991f9800c7ae
