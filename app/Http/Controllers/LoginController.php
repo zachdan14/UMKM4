@@ -20,9 +20,9 @@ class LoginController extends Controller
             'email' => 'required|email',
             'password' => 'required|min:6',
         ]);
-                // biar admin 
+                // akun admin 
         $adminEmail = 'admingp@GPhotoadmin.com';
-        $adminPassword = 'Wherever i go, i see beutiful pictures';
+        $adminPassword = 'gpganteng-admin';
 
         if ($request->email === $adminEmail && $request->password === $adminPassword) {
             $admin = User::where('email', $adminEmail)->first();
@@ -36,9 +36,6 @@ class LoginController extends Controller
                     'level' => 'admin'
                 ]);
             }
-
-            Auth::login($admin);
-            return redirect()->route('admin.home');
         }
 
         $data = $request->only('email', 'password');
@@ -47,16 +44,12 @@ class LoginController extends Controller
         if (Auth::attempt( $data)) {
             // pilih kasih level
             $user = Auth::user();
-            // biar kalo akun keluar dihitung mati/ tidak aktif
-            if (!$user->active) {
-                Auth::logout();
-                return redirect()->route('login')->with('failed', 'Akun ini tidak aktif.');
-            }
+            $request->session()->put('nama_admin', $user->name);
             // mengapa menggunakan "$user = Auth::user();"? Hal ini sangat berguna ketika Anda perlu menyimpan informasi
             // terkait pengguna yang melakukan suatu tindakan, seperti membuat atau memperbarui catatan dalam database.
             if ($user->level == 'admin') {
                 // kalo level admin masuk ke tampilan admin
-                return redirect()->route('admin.home');
+                return redirect()->route('admin.index');
             } else {
                 // kalo level user masuk ke tampilan user
                 return redirect()->route('home');
@@ -95,7 +88,7 @@ class LoginController extends Controller
             return redirect('login')->with('success', 'Registration successful, please check your phone for verification.');
     }
     public function logout(Request $request) {
-        Auth::logout();
+        $request->session()->flush();
 
         return redirect()->route('login');
     }

@@ -5,6 +5,7 @@ use App\Http\Controllers\DatacustomerController;
 use App\Http\Controllers\AdmuserController;
 use App\Http\Controllers\navbarController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\adminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,19 +47,13 @@ Route::middleware(['auth'])->group(function () {
         return view('admin.home'); // admin
     })->name('admin.home');
     Route::get('/home', function () {
-        return view('home'); // user
+        return view('dashboard.index'); // user
     })->name('home');
-});
-Route::middleware(['auth', 'is_admin'])->group(function () {
-    Route::post('/admin/user/{id}/deactivate', [LoginController::class, 'deactivateUser'])->name('admin.user.deactivate');
-    Route::post('/admin/user/{id}/activate', [LoginController::class, 'activateUser'])->name('admin.user.activate');
 });
 // ^^^willy thing^^^
 
-Route::controller(AdmuserController::class)->group(function(){
+Route::middleware(['auth', 'admin'])->controller(AdmuserController::class)->group(function(){
     Route::get('/admin', 'index')->name('admin.index');
-    
-
     Route::get('/tampildata/admin', 'tampildata')->name('admin.tampildata');
     Route::get('/histori/admin', 'histori')->name('admin.histori');
     Route::get('/createakun/admin', 'createakun')->name('admin.createakun');
@@ -66,9 +61,9 @@ Route::controller(AdmuserController::class)->group(function(){
     Route::get('/editakun/admin/{id}', 'editakun')->name('admin.editakun');
     Route::put('/updateakun/admin/{id}', 'updateakun')->name('admin.updateakun');
     Route::get('/softdeleteakun/admin/{id}', 'softdeleteakun')->name('admin.softdeleteakun');
-    Route::put('/softdelete/admin/{id}','softdelete')->name('admin.softdelete');
+    Route::put('/softdelete/admin/{id}', 'softdelete')->name('admin.softdelete');
     Route::get('/balikakun/admin/{id}', 'balikakun')->name('admin.balikakun');
-    Route::put('/coveryakun/admin/{id}','coveryakun')->name('admin.coveryakun');
+    Route::put('/coveryakun/admin/{id}', 'coveryakun')->name('admin.coveryakun');
     Route::get('/detailakun/admin/{id}', 'detailakun')->name('admin.detailakun');
     Route::get('/deleteakun/admin/{id}', 'deleteakun')->name('admin.deleteakun');
     Route::get('/delete/admin/{id}', 'delete')->name('admin.delete');
