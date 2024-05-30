@@ -1,12 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-<<<<<<< HEAD
 use App\Http\Controllers\DatacustomerController;
-=======
 use App\Http\Controllers\AdmuserController;
 use App\Http\Controllers\navbarController;
->>>>>>> 8251b54eb31068e8aef4df358cb9991f9800c7ae
 
 /*
 |--------------------------------------------------------------------------
@@ -34,8 +31,6 @@ Route::controller(DatacustomerController::class)->group(function(){
     Route::get('/form','indexForm')->name('form.index');
 });
 
-<<<<<<< HEAD
-=======
 Route::controller(AdmuserController::class)->group(function(){
     Route::get('/admin', 'index')->name('admin.index');
     
@@ -53,7 +48,6 @@ Route::controller(AdmuserController::class)->group(function(){
     Route::get('/detailakun/admin/{id}', 'detailakun')->name('admin.detailakun');
     Route::get('/deleteakun/admin/{id}', 'deleteakun')->name('admin.deleteakun');
     Route::get('/delete/admin/{id}', 'delete')->name('admin.delete');
-    Route::get('/pesan/admin', 'pemesanan')->name('admin.pemesanan');
 });
 
 // Route::get('/welcomepageee', function () {
@@ -61,4 +55,3 @@ Route::controller(AdmuserController::class)->group(function(){
 // });
 
 Route::resource('/welcomepageee', navbarController::class);
->>>>>>> 8251b54eb31068e8aef4df358cb9991f9800c7ae

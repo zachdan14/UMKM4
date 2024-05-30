@@ -10,7 +10,6 @@ use Illuminate\View\View;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 use App\Models\Data;
-use App\Models\Booking;
 
 class AdmuserController extends Controller
 {
@@ -162,27 +161,5 @@ class AdmuserController extends Controller
 
     
     // end akun user
-
-
-    
-
-    // akun admin
-    
-
-
-    // end akun admin
-
-    public function admin(){
-        $admins = Admin::get();
-        return view('admin/admin/pemesanan_data',compact('data'));
-    }
-
-    // pemesanan
-    public function pemesanan(){
-        $data = Data::get();
-        return view('admin/admin/pemesanan_data',compact('data'));
-    }
-
-    
 
 }

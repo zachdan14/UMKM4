@@ -95,17 +95,11 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <!-- <div class="image">
-          <img src="{{ asset('template/dist/img/logo_umkmbulet.png') }}" class="img-circle elevation-2" alt="User Image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div> -->
-
-        @if (session('nama_admin'))
-        <div class="carousel-caption ">
-          <div class="info">
-          <a href="#" class="d-block" style="text-decoration:none">{{ session('nama_admin') }}</a>
+        <div class="info">
+          <a href="#" class="d-block">Admin</a>
         </div>
-        </div>
-        @endif
-
       </div>
 
       <!-- SidebarSearch Form -->
