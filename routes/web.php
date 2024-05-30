@@ -27,11 +27,10 @@ use App\Http\Controllers\adminController;
 //     return view('layout.home');
 // });
 
-Route::controller(DatacustomerController::class)->group(function(){
-    Route::get('/datacustomer','index')->name('datacustomer.index');
-    Route::post('/datacustomer/kirim','store')->name('datacustomer.store');
-    Route::get('/form','indexForm')->name('form.index');
-});
+Route::get('/datacustomer', [DatacustomerController::class, 'index'])->name('datacustomer.index');
+Route::get('/form', [DatacustomerController::class, 'indexForm'])->name('datacustomer.form');
+Route::post('/datacustomer/store', [DatacustomerController::class, 'store'])->name('datacustomer.store');
+
 
 // {{-- login (willy thing) --}}
 Route::get('/login', [LoginController::class, 'login'])->name('login');
@@ -67,7 +66,6 @@ Route::middleware(['auth', 'admin'])->controller(AdmuserController::class)->grou
     Route::get('/detailakun/admin/{id}', 'detailakun')->name('admin.detailakun');
     Route::get('/deleteakun/admin/{id}', 'deleteakun')->name('admin.deleteakun');
     Route::get('/delete/admin/{id}', 'delete')->name('admin.delete');
-    Route::get('/pesan/admin', 'pemesanan')->name('admin.pemesanan');
 });
 
 // Route::get('/welcomepageee', function () {
