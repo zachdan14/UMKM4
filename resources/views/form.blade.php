@@ -220,9 +220,6 @@
                 </div>
             </form>
             </div>
-                <!-- Gambar -->
-                    <img src="/assets/logooooo.png" alt="Gambar" id="gambar" style="max-width: 100%; height: auto;">
-                </div>
         </body>
         </html>
 

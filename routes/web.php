@@ -30,6 +30,7 @@ Route::get('/form', [DatacustomerController::class, 'indexForm'])->name('datacus
 Route::post('/datacustomer/store', [DatacustomerController::class, 'store'])->name('datacustomer.store');
 
 
+
 Route::controller(AdmuserController::class)->group(function(){
     Route::get('/admin', 'index')->name('admin.index');
     Route::get('/tampildata/admin', 'tampildata')->name('admin.tampildata');

@@ -50,7 +50,6 @@ class DatacustomerController extends Controller
             'pembayaran' => $request->pembayaran,
             'tipe_layanan' => $request->tipe_layanan,
             'tanggal' => $request->tanggal,
-            'created_at' => now(),
         ]);
 
         return redirect()->route('datacustomer.index')->with('success', 'Data Berhasil Ditambah!');
