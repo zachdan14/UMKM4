@@ -17,11 +17,10 @@
                   <th>Id Pesanan</th>
                   <th>Nama Lengkap</th>
                   <th>Email</th>
-                  <th>Phone</th>
-                  <th>Rincian</th>
-                  <th>Tanggal Booking</th>
-                  <th>Jam Booking</th>
-                  <th>Paket</th>
+                  <th>Kontak</th>
+                  <th>Keterangan Alamat</th>
+                  <th>Tanggal_Booking</th>
+                  <th>Tipe layanan</th>
                   <th>Pembayaran</th>
                   <th>Tanggal</th>
                 </tr>
@@ -30,14 +29,13 @@
                 @foreach ($masters as $mtr)
                     <tr>
                     <th>{{ $mtr->id }}</th>
-                    <th>{{ $mtr->idpesanan}}</th>
-                    <th>{{ $mtr->fullname }}</th>
-                    <th>{{ $mtr->emailaddress }}</th>
-                    <th>{{ $mtr->phone }}</th>
-                    <th>{{ $mtr->rincian }}</th>
-                    <th>{{ $mtr->tanggal_booking }}</th>
-                    <th>{{ $mtr->jam_booking }}</th>
-                    <th>{{ $mtr->paket }}</th>
+                    <th>{{ $mtr->id_user }}</th>
+                    <th>{{ $mtr->nama_user }}</th>
+                    <th>{{ $mtr->email }}</th>
+                    <th>{{ $mtr->kontak }}</th>
+                    <th>{{ $mtr->alamat }}</th>
+                    <th>{{ $mtr->tanggal }}</th>
+                    <th>{{ $mtr->tipe_layanan }}</th>m
                     <th>{{ $mtr->pembayaran}}</th>
                     <th>{{ $mtr->created_at}}</th>
                     </tr>

@@ -11,24 +11,24 @@ class Datacustomer extends Model
     use HasFactory;
 
     protected $fillable = [
-        'idpesanan',
-        'fullname',
-        'emailaddress',
-        'phone',
-        'rincian',
+        'id_user',
+        'nama_user',
+        'email',
+        'kontak',
+        'alamat',
         'pembayaran',
-        'paket',
-        'tanggal_booking',
+        'tipe_layanan',
+        'tanggal',
         'jam_booking',
-        'created_at',
+        'created_at'
     ];
-
-    protected static function booted()
+    protected $table='datacustomers';
+    protected static function boot()
     {
-        static::creating(function ($datacustomer) {
-            if (empty($datacustomer->idpesanan)) {
-                $datacustomer->idpesanan = Str::uuid()->toString();
-            }
+        parent::boot();
+
+        static::creating(function ($model) {
+            $model->id_user = (string) Str::uuid();
         });
     }
 }

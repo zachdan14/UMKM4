@@ -13,14 +13,13 @@ return new class extends Migration
     {
         Schema::create('datacustomers', function (Blueprint $table) { // Change here
             $table->id();
-            $table->string('idpesanan')->unique()->default(\Illuminate\Support\Str::uuid()->toString());
+            $table->string('id_user')->unique();
             $table->string('nama_user');
             $table->string('email');
             $table->char('kontak', 20);
             $table->string('alamat');
             $table->enum('pembayaran', ['qris', 'cod']);
-            $table->enum('jam_booking', ['08:00-12:00', '12:00-15:00', '15:00-18:00', '18:00-20:00']);
-            $table->enum('paket', ['Prewedding', 'Foto Wisuda', 'Mahasiswa/Siswa', 'Lainnya']);
+            $table->enum('tipe_layanan', ['Prewedding', 'Foto Wisuda', 'Mahasiswa/Siswa', 'Lainnya']);
             $table->date('tanggal');
             $table->timestamps();   
         });
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('datacustomers'); // Change here
+        Schema::dropIfExists('datacustomer'); // Change here
     }
 };
