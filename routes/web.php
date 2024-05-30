@@ -25,16 +25,13 @@ use App\Http\Controllers\navbarController;
 //     return view('layout.home');
 // });
 
-Route::controller(DatacustomerController::class)->group(function(){
-    Route::get('/datacustomer','index')->name('datacustomer.index');
-    Route::post('/datacustomer/kirim','store')->name('datacustomer.store');
-    Route::get('/form','indexForm')->name('form.index');
-});
+Route::get('/datacustomer', [DatacustomerController::class, 'index'])->name('datacustomer.index');
+Route::get('/form', [DatacustomerController::class, 'indexForm'])->name('datacustomer.form');
+Route::post('/datacustomer/store', [DatacustomerController::class, 'store'])->name('datacustomer.store');
+
 
 Route::controller(AdmuserController::class)->group(function(){
     Route::get('/admin', 'index')->name('admin.index');
-    
-
     Route::get('/tampildata/admin', 'tampildata')->name('admin.tampildata');
     Route::get('/histori/admin', 'histori')->name('admin.histori');
     Route::get('/createakun/admin', 'createakun')->name('admin.createakun');
@@ -55,3 +52,4 @@ Route::controller(AdmuserController::class)->group(function(){
 // });
 
 Route::resource('/welcomepageee', navbarController::class);
+
