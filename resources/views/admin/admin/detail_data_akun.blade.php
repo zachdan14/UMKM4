@@ -7,12 +7,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Hapus Data Akun</h1>
+            <h1 class="m-0">Detail Data Akun</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Hapus Data Akun</li>
+              <li class="breadcrumb-item active">Detail Data Akun</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -23,43 +23,52 @@
    <div class="card">
       <div class="card-body">
          
-         <form action='{{ route("admin.deleteakun", $data->id) }}' method="POST" autocomplete="off" class="needs-validation" novalidate>
+         <form action='{{ route("admin.updateakun", $data->id) }}' method="POST" autocomplete="off" class="needs-validation" novalidate>
              @csrf
-             @method('PUT')
+
+             <div class="mb-3 row">
+               <label for="id" class="col-sm-2 col-form-label">Id</label>
+               <div class="col-sm-10">
+                  <input type="text" class="form-control" name="id" value="{{$data->id}}" disabled>
+               </div>
+            </div>
+
             <div class="mb-3 row">
                <label for="email" class="col-sm-2 col-form-label">Email</label>
                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="email" placeholder="Isi Email" value="{{$data->email}}" required>
+                  <input type="text" class="form-control" name="email" value="{{$data->email}}" disabled>
                </div>
             </div>
 
             <div class="mb-3 row">
                <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="nama_user" placeholder="Isi Nama" value="{{$data->nama_user}}" required>
+                  <input type="text" class="form-control" name="nama_user" value="{{$data->nama_user}}" disabled>
                </div>
             </div>
 
             <div class="mb-3 row">
                <label for="password" class="col-sm-2 col-form-label">Password</label>
                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="password" placeholder="Isi Password" value="{{$data->password}}" required>
+                  <input type="text" class="form-control" name="password" value="{{$data->password}}" disabled>
                </div>
             </div>
 
             <div class="mb-3 row">
                <label for="status_publish" class="col-sm-2 col-form-label">Status Publish</label>
                <div class="col-sm-10">
-                  <select class="form-control" name="status_publish" required>
-                  <option value="{{$data->status_publish}}">{{$data->status_publish}}</option>
-                  <option value="publish">Publish</option> 
-                  <option value="draft">Draft</option>
-                  </select>
+                  <input type="text" class="form-control" name="status_publish" value="{{$data->status_publish}}" disabled>
                </div>
             </div>
-            
+
+            <div class="mb-3 row">
+               <label for="status_aktif" class="col-sm-2 col-form-label">Status Aktif</label>
+               <div class="col-sm-10">
+                  <input type="text" class="form-control" name="status_aktif" value="{{$data->status_aktif}}" disabled>
+               </div>
+            </div>
+
             <a href="{{route('admin.tampildata')}}" class="btn btn-danger mt-2">Batal</a>
-            <button class="btn btn-primary mt-2" type="submit">Delete form</button>
 
          </form>
       </div>

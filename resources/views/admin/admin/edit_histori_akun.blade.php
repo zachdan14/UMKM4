@@ -7,12 +7,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Hapus Data Akun</h1>
+            <h1 class="m-0">Edit Histori Akun</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Hapus Data Akun</li>
+              <li class="breadcrumb-item active">Edit Histori Akun</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -23,7 +23,7 @@
    <div class="card">
       <div class="card-body">
          
-         <form action='{{ route("admin.deleteakun", $data->id) }}' method="POST" autocomplete="off" class="needs-validation" novalidate>
+         <form action='{{ route("admin.coveryakun", $data->id) }}' method="POST" autocomplete="off" class="needs-validation" novalidate>
              @csrf
              @method('PUT')
             <div class="mb-3 row">
@@ -52,14 +52,18 @@
                <div class="col-sm-10">
                   <select class="form-control" name="status_publish" required>
                   <option value="{{$data->status_publish}}">{{$data->status_publish}}</option>
-                  <option value="publish">Publish</option> 
-                  <option value="draft">Draft</option>
+                  <option value="Publish">Publish</option> 
+                  <option value="Draft">Draft</option>
                   </select>
                </div>
             </div>
-            
-            <a href="{{route('admin.tampildata')}}" class="btn btn-danger mt-2">Batal</a>
-            <button class="btn btn-primary mt-2" type="submit">Delete form</button>
+
+            <input name="status_publish" value="Publish" type="hidden">
+            <input name="status_aktif" value="Aktif" type="hidden">
+            <input name="updated_by" value="1" type="hidden">
+
+            <button class="btn btn-danger mt-2" type="Reset">Reset form</button>
+            <button class="btn btn-primary mt-2" type="submit">Recovery form</button>
 
          </form>
       </div>

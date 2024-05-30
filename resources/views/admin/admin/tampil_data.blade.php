@@ -33,7 +33,7 @@
               </div>
               <!-- /.card-header -->
 
-                <table id="example1" class="table table-bordered table-striped mt-3">
+                <table id="example1" class="table table-bordered mt-3" style="width: 100%;" >
                     <thead>
                       <tr>
                         <th data-priority="1">Id</th>
@@ -43,7 +43,7 @@
                         <th>Status Publish</th>
                         <th>Tanggal</th>
                         <th>Penulis</th>
-                        <th data-priority="1">Aksi</th>
+                        <th>Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -67,15 +67,16 @@
                             {{ $psn->created_by }}
                             @endif
                         </td>
-                        <td><a href="" class="btn btn-primary btn-sm" role="button">
+                        <td><a href="{{ route('admin.detailakun', $psn->id) }}" class="btn btn-primary btn-sm" role="button">
                             <i class="bi bi-eye"></i>
                         </a>
                         <a href="{{ route('admin.editakun', $psn->id) }}" class="btn btn-success btn-sm" role="button">
                             <i class="bi bi-pencil"></i>
                         </a>
-                        <a href="{{ route('admin.hapusakun', $psn->id) }}" class="btn btn-danger btn-sm" role="button">
+                        <a href="{{ route('admin.softdeleteakun', $psn->id) }}" class="btn btn-danger btn-sm" role="button">
                             <i class="bi bi-trash3"></i>
-                        </a></td>
+                        </a>
+                      </td>
                       </tr>
                       @endforeach
                       
