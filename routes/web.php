@@ -31,7 +31,7 @@ Route::post('/login-proses', [LoginController::class, 'login_proses'])->name('lo
 Route::get('/register', [LoginController::class, 'register'])->name('register');
 Route::post('/register-proses', [LoginController::class, 'register_proses'])->name('register.proses');
 // log out
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 // biar saat login auto ke halaman masing-masing
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/home', function () {
@@ -45,6 +45,7 @@ Route::middleware(['auth'])->group(function () {
 
 // vania
 Route::middleware(['auth', 'admin'])->controller(AdmuserController::class)->group(function(){
+    route::get('/pemesanan', 'pemesanan')->name('admin.pemesanan');
     Route::get('/admin', 'index')->name('admin.index');
     Route::get('/tampildata/admin', 'tampildata')->name('admin.tampildata');
     Route::get('/histori/admin', 'histori')->name('admin.histori');

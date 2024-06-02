@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin GoFotografer</title>
   <link rel="icon" href="{{ asset('template/dist/img/logo_bulet.png') }}">
 
   <!-- Google Font: Source Sans Pro -->
@@ -87,7 +86,7 @@
     <!-- Brand Logo -->
     <a href="{{ route('admin.index') }}" class="brand-link" style="text-decoration:none">
       <img src="{{ asset('template/dist/img/logo_bulet.png') }}" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Admin GoFotografer</span>
+      <span class="brand-text font-weight-light">GoFotografer</span>
     </a>
 
     <!-- Sidebar -->
@@ -100,7 +99,7 @@
         <div class="info">
           <a href="#" class="d-block" style="text-decoration:none, ">{{ Auth::user()->name }}</a>
           <a href="#" class="d-block" style="text-decoration:none, ">{{ Auth::user()->email }}</a>
-          <a href="#" class="d-block" style="text-decoration:none, ">{{ Auth::user()->password }}</a>
+          <a href="{{ route('logout') }}" class="nav-link">Logout</a>
         </div>
         {{-- <div class="carousel-caption">
             <div class="info">

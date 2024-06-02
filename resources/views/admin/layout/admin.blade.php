@@ -100,7 +100,7 @@
         <div class="info">
           <a href="#" class="d-block" style="text-decoration:none, ">{{ Auth::user()->name }}</a>
           <a href="#" class="d-block" style="text-decoration:none, ">{{ Auth::user()->email }}</a>
-          <a href="#" class="d-block" style="text-decoration:none, ">{{ Auth::user()->password }}</a>
+          <a href="{{ route('logout') }}" class="nav-link">Logout</a>
         </div>
         {{-- <div class="carousel-caption">
             <div class="info">
