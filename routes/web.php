@@ -5,6 +5,8 @@ use App\Http\Controllers\DatacustomerController;
 use App\Http\Controllers\AdmuserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\WelcomepageController;
+use App\Http\Controllers\Beranda;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,4 +62,9 @@ Route::middleware(['auth', 'admin'])->controller(AdmuserController::class)->grou
     Route::get('/detailakun/admin/{id}', 'detailakun')->name('admin.detailakun');
     Route::get('/deleteakun/admin/{id}', 'deleteakun')->name('admin.deleteakun');
     Route::get('/delete/admin/{id}', 'delete')->name('admin.delete');
+    Route::get('/tampiladmin/admin', 'tampiladmin')->name('admin.tampiladmin');
 });
+
+// pasya
+
+    Route::get('/welcomepage', [WelcomepageController::class, 'index'])->name('welcomepage');

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Welcomepage;
+use App\Models\welcomepage;
 use App\Http\Requests\StorewelcomepageRequest;
 use App\Http\Requests\UpdatewelcomepageRequest;
 use Illuminate\Http\Request;
@@ -14,8 +14,8 @@ class WelcomepageController extends Controller
      */
     public function index()
     {
-        $welcomepages = Welcomepage::all();
-        return view('user.welcomepage', compact('welcomepages'));
+        $welcomepages = welcomepage::all();
+        return view('Welcomepage', compact('welcomepages'));
     }
 
     /**
@@ -32,7 +32,7 @@ class WelcomepageController extends Controller
     public function store(StorewelcomepageRequest $request)
     {
         $validatedData = $request->validated();
-        Welcomepage::create($validatedData);
+        welcomepage::create($validatedData);
 
         return redirect()->route('welcomepage.index')->with('success', 'Welcome Page created successfully!');
     }
@@ -40,7 +40,7 @@ class WelcomepageController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Welcomepage $welcomepage)
+    public function show(welcomepage $welcomepage)
     {
         return view('user.show_welcomepage', compact('welcomepage'));
     }
@@ -48,7 +48,7 @@ class WelcomepageController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Welcomepage $welcomepage)
+    public function edit(welcomepage $welcomepage)
     {
         return view('user.edit_welcomepage', compact('welcomepage'));
     }
@@ -56,7 +56,7 @@ class WelcomepageController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatewelcomepageRequest $request, Welcomepage $welcomepage)
+    public function update(UpdatewelcomepageRequest $request, welcomepage $welcomepage)
     {
         $validatedData = $request->validated();
         $welcomepage->update($validatedData);
@@ -67,7 +67,7 @@ class WelcomepageController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Welcomepage $welcomepage)
+    public function destroy(welcomepage $welcomepage)
     {
         $welcomepage->delete();
 
