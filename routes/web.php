@@ -61,11 +61,3 @@ Route::middleware(['auth', 'admin'])->controller(AdmuserController::class)->grou
     Route::get('/deleteakun/admin/{id}', 'deleteakun')->name('admin.deleteakun');
     Route::get('/delete/admin/{id}', 'delete')->name('admin.delete');
 });
-
-<<<<<<< HEAD
-
-
-Route::resource('/welcomepageee', navbarController::class);
-
-=======
->>>>>>> fc49e0f82731b77c340b72c9bc4a6dd0c1bd0fef
