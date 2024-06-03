@@ -20,7 +20,6 @@ class Datacustomer extends Model
         'tipe_layanan',
         'tanggal',
         'jam_booking',
-        'created_at'
     ];
     protected $table='datacustomers';
     protected static function boot()

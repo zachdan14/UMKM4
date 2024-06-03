@@ -57,20 +57,9 @@
                         <td>{{$psn->kontak}}</td>
                         <td>{{$psn->tipe_layanan}}</td>
                         <td>{{$psn->status_pemesanan}}</td>
-                        <td>@if ($psn->update_at != null)
-                        {{ Carbon\Carbon::parse($psn->update_at)->format('d-m-Y H:i:s') }}
-                        @else
-                        {{ Carbon\Carbon::parse($psn->created_at)->format('d-m-Y H:i:s') }}  
-                        @endif
-                        </td>
-                        <td>
-                            @if ($psn->update_by != null)
-                            {{ $psn->update_by }}
-                            @else 
-                            {{ $psn->created_by }}
-                            @endif
-                        </td>
-                        <td><a href="" class="btn btn-primary btn-sm" role="button">
+                        <td>{{$psn->tanggal}}</td>
+                        <td>{{$psn->nama_user}}</td>
+                        <td><a href="{{ route('datacustomer.index') }}" class="btn btn-primary btn-sm" role="button">
                             <i class="bi bi-eye"></i>
                         </a>
                         <a href="" class="btn btn-success btn-sm" role="button">
