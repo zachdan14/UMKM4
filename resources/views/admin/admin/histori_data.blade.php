@@ -23,7 +23,7 @@
             <div class="card">
               <div class="card-header">
 
-                <table id="example1" class="table table-bordered table-striped mt-3">
+                <table id="example1" class="table table-bordered table-striped mt-3" style="width: 100%;">
                     <thead>
                       <tr>
                         <th data-priority="1">Id</th>
@@ -44,8 +44,8 @@
                         <td>{{$psn->nama_user}}</td>
                         <td>{{$psn->status_aktif}}</td>
                         <td>{{$psn->status_publish}}</td>
-                        <td>@if ($psn->update_at != null)
-                        {{ Carbon\Carbon::parse($psn->update_at)->format('d-m-Y H:i:s') }}
+                        <td>@if ($psn->updated_at != null)
+                        {{ Carbon\Carbon::parse($psn->updated_at)->format('d-m-Y H:i:s') }}
                         @else
                         {{ Carbon\Carbon::parse($psn->created_at)->format('d-m-Y H:i:s') }}  
                         @endif
@@ -57,15 +57,16 @@
                             {{ $psn->created_by }}
                             @endif
                         </td>
-                        <td><a href="" class="btn btn-primary btn-sm" role="button">
+                        <td><a href="{{ route('admin.detailakun', $psn->id) }}" class="btn btn-primary btn-sm" role="button">
                             <i class="bi bi-eye"></i>
                         </a>
-                        <a href="" class="btn btn-success btn-sm" role="button">
-                            <i class="bi bi-pencil"></i>
+                        <a href="{{ route('admin.balikakun', $psn->id) }}" class="btn btn-warning btn-sm" role="button">
+                          <i class="bi bi-arrow-counterclockwise"></i>
                         </a>
-                        <a href="" class="btn btn-danger btn-sm" role="button">
+                        <a href="{{ route('admin.delete', $psn->id) }}" class="btn btn-danger btn-sm" role="button">
                             <i class="bi bi-trash3"></i>
-                        </a></td>
+                        </a>
+                      </td>
                                 </tr>
                                 @endforeach
                       
