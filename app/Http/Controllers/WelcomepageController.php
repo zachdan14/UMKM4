@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\welcomepage;
+use App\Models\Welcomepage;
 use App\Http\Requests\StorewelcomepageRequest;
 use App\Http\Requests\UpdatewelcomepageRequest;
+use Illuminate\Http\Request;
 
 class WelcomepageController extends Controller
 {
@@ -13,7 +14,8 @@ class WelcomepageController extends Controller
      */
     public function index()
     {
-        return view('user.welcomepage');
+        $welcomepages = Welcomepage::all();
+        return view('user.welcomepage', compact('welcomepages'));
     }
 
     /**
@@ -21,7 +23,7 @@ class WelcomepageController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.create_welcomepage');
     }
 
     /**
@@ -29,38 +31,46 @@ class WelcomepageController extends Controller
      */
     public function store(StorewelcomepageRequest $request)
     {
-        //
+        $validatedData = $request->validated();
+        Welcomepage::create($validatedData);
+
+        return redirect()->route('welcomepage.index')->with('success', 'Welcome Page created successfully!');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(welcomepage $welcomepage)
+    public function show(Welcomepage $welcomepage)
     {
-        //
+        return view('user.show_welcomepage', compact('welcomepage'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(welcomepage $welcomepage)
+    public function edit(Welcomepage $welcomepage)
     {
-        //
+        return view('user.edit_welcomepage', compact('welcomepage'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatewelcomepageRequest $request, welcomepage $welcomepage)
+    public function update(UpdatewelcomepageRequest $request, Welcomepage $welcomepage)
     {
-        //
+        $validatedData = $request->validated();
+        $welcomepage->update($validatedData);
+
+        return redirect()->route('welcomepage.index')->with('success', 'Welcome Page updated successfully!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(welcomepage $welcomepage)
+    public function destroy(Welcomepage $welcomepage)
     {
-        //
+        $welcomepage->delete();
+
+        return redirect()->route('welcomepage.index')->with('success', 'Welcome Page deleted successfully!');
     }
 }

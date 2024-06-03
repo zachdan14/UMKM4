@@ -54,7 +54,8 @@
                         <td>{{$psn->nama_user}}</td>
                         <td>{{$psn->status_aktif}}</td>
                         <td>{{$psn->status_publish}}</td>
-                        <td>@if ($psn->updated_at != null)
+                        <td> 
+                        @if ($psn->updated_at != null)
                         {{ Carbon\Carbon::parse($psn->updated_at)->format('d-m-Y H:i:s') }}
                         @else
                         {{ Carbon\Carbon::parse($psn->created_at)->format('d-m-Y H:i:s') }}  
