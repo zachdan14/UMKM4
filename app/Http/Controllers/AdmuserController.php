@@ -39,7 +39,7 @@ class AdmuserController extends Controller
         $request->validate([
             'email' => 'required|unique:data',
             'nama_user' => 'required',
-            'password' => 'required|unique:data',
+            'password' => 'required',
             'status_publish' => 'required'
         ]);
 
@@ -68,9 +68,9 @@ class AdmuserController extends Controller
 
     public function updateakun(Request $request, $id): RedirectResponse{
         $request->validate([
-            'email' => 'required|unique:data',
+            'email' => 'required',
             'nama_user' => 'required',
-            'password' => 'required|unique:data',
+            'password' => 'required',
             'status_publish' => 'required'
         ]);
 
@@ -92,6 +92,7 @@ class AdmuserController extends Controller
         return redirect()->route('admin.tampildata')->with(
             ['success'=>'Data Berhasil Diubah!']);
     }
+
 
     public function softdeleteakun($id):View{
         $data = Data::where('id', $id)->firstorfail();

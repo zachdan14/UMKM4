@@ -58,17 +58,7 @@
                </div>
             </div>
 
-            <div class="mb-3 row">
-               <label for="status_aktif" class="col-sm-2 col-form-label">Status Aktif</label>
-               <div class="col-sm-10">
-                  <select class="form-control" name="status_aktif" required>
-                  <option></option>
-                  <option value="Aktif">Aktif</option> 
-                  <option value="Hapus">Hapus</option>
-                  </select>
-               </div>
-            </div>
-
+            <input name="status_aktif" value="Aktif" type="hidden">
             <input name="created_by" value="1" type="hidden">
 
             <button class="btn btn-danger mt-2" type="Reset">Reset form</button>

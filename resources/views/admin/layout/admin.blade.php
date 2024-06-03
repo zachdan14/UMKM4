@@ -139,13 +139,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('admin.pemesanan') }}" class="nav-link">
+                <a href="" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Message</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('admin.pemesanan') }}" class="nav-link">
+                <a href="" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Acc</p>
                 </a>
