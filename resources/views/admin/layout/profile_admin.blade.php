@@ -7,12 +7,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Tambah Data Akun</h1>
+            <h1 class="m-0">Profile Admin</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Tambah Data Akun</li>
+              <li class="breadcrumb-item active">Profile Admin</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -22,49 +22,52 @@
     <!--Memasukkan Data-->
    <div class="card">
       <div class="card-body">
-         
-         <form action='{{ route("admin.saveakun") }}' method="POST" autocomplete="off" class="needs-validation" novalidate>
-             @csrf
-            
+      @foreach ($admins as $adm)
+             <div class="mb-3 row">
+               <label for="id" class="col-sm-2 col-form-label">Id</label>
+               <div class="col-sm-10">
+                  <input type="text" class="form-control" name="id_admin" value="{{$adm->id_admin}}" disabled>
+               </div>
+            </div>
+
             <div class="mb-3 row">
                <label for="email" class="col-sm-2 col-form-label">Email</label>
                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="email" placeholder="Isi Email" required>
+                  <input type="text" class="form-control" name="email_admin" value="{{$adm->email_admin}}" disabled>
                </div>
             </div>
 
             <div class="mb-3 row">
                <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="nama_user" placeholder="Isi Nama" required>
+                  <input type="text" class="form-control" name="nama_admin" value="{{$adm->nama_admin}}" disabled>
                </div>
             </div>
 
             <div class="mb-3 row">
                <label for="password" class="col-sm-2 col-form-label">Password</label>
                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="password" placeholder="Isi Password" required>
+                  <input type="text" class="form-control" name="password_admin" value="{{$adm->password_admin}}" disabled>
                </div>
             </div>
 
             <div class="mb-3 row">
                <label for="status_publish" class="col-sm-2 col-form-label">Status Publish</label>
                <div class="col-sm-10">
-                  <select class="form-control" name="status_publish" required>
-                  <option></option>
-                  <option value="Publish">Publish</option> 
-                  <option value="Draft">Draft</option>
-                  </select>
+                  <input type="text" class="form-control" name="status_publish_ad" value="{{$adm->status_publish_ad}}" disabled>
                </div>
             </div>
 
-            <input name="status_aktif" value="Aktif" type="hidden">
-            <input name="created_by" value="1" type="hidden">
+            <div class="mb-3 row">
+               <label for="status_aktif" class="col-sm-2 col-form-label">Status Aktif</label>
+               <div class="col-sm-10">
+                  <input type="text" class="form-control" name="status_aktif_ad" value="{{$adm->status_aktif_ad}}" disabled>
+               </div>
+            </div>
 
-            <button class="btn btn-danger mt-2" type="Reset">Reset form</button>
-            <button class="btn btn-primary mt-2" type="submit">Submit form</button>
+            <a href="{{ route('admin.editadmin', $adm->id_admin) }}" class="btn btn-danger mt-2">Edit form</a>
 
-         </form>
+      @endforeach
       </div>
    </div>
 </div>

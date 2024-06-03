@@ -1,13 +1,14 @@
 @extends('admin/layout/layout')
 @section('content')
-  <h3>Data Customer</h3>
+  <h3>Detail Customer</h3>
 <div class="mt-2">
   <div class="container">
   <div class="card">
         <div class="card-header">
-        <td><button onclick="location.href='{{ url('form') }}'">
-        <i class="bi bi-clipboard-plus-fill"></i> Add New Data
-        </button></td>
+        <td> <a href="{{ route('admin.createakun') }}" class="btn btn-danger">
+                    <i class="nav-icon fas fa-plus"></i>
+                    Tambah Akun
+                </a></td>
         </div>
         <div class="card-body">
             <table class="table table-sm table-stripped table-bordered">

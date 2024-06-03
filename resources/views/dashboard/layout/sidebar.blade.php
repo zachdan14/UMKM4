@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin GoFotografer</title>
   <link rel="icon" href="{{ asset('template/dist/img/logo_bulet.png') }}">
 
   <!-- Google Font: Source Sans Pro -->
@@ -87,7 +86,7 @@
     <!-- Brand Logo -->
     <a href="{{ route('admin.index') }}" class="brand-link" style="text-decoration:none">
       <img src="{{ asset('template/dist/img/logo_bulet.png') }}" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Admin GoFotografer</span>
+      <span class="brand-text font-weight-light">GoFotografer</span>
     </a>
 
     <!-- Sidebar -->
@@ -95,7 +94,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <!-- <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="{{ asset('template/dist/img/logo_umkmbulet.png') }}" class="img-circle elevation-2" alt="User Image">
         </div> -->
         <div class="info">
           <a href="#" class="d-block" style="text-decoration:none, ">{{ Auth::user()->name }}</a>
@@ -138,48 +137,30 @@
             </li>
 
             <li class="nav-item">
-            <a href="" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
-              <p>
-                Data Pemesanan
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
                 <a href="" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Message</p>
+                    <i class="nav-icon fas fa-copy"></i>
+                <p>Orders <i class="fas fa-angle-left right"></i></p>
                 </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Acc</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Process</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Done</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-
-            <li class="nav-item">
-              <a href="{{ route('admin.histori') }}" class="nav-link">
-                  <i class="nav-icon fas fa-book"></i>
-                  <p>
-                    Histori
-                  </p>
-              </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="route history pesanan" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                        <p>History Pesanan</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="route status pesanan" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                        <p>Status Pesanan</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="route ulasan" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                        <p>Ulasanmu kepada kami</p>
+                        </a>
+                    </li>
+                </ul>
             </li>
         </ul>
       </nav>
