@@ -68,7 +68,7 @@ Route::middleware(['auth', 'admin'])->controller(AdmuserController::class)->grou
 
 // pasya
 
-    Route::get('/welcomepage', [WelcomepageController::class, 'index'])->name('welcomepage');
+    Route::get('/', [WelcomepageController::class, 'index'])->name('welcomepage');
     Route::get('/admin/tampiladmin', [Beranda::class, 'showUploadForm'])->name('admin.showUploadForm');
     Route::get('/admin/tampiladmin', [Beranda::class, 'tampiladmin'])->name('admin.tampiladmin');
    
