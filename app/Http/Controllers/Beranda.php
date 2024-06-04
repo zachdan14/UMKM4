@@ -12,10 +12,25 @@ use App\Models\foto;
 
 class Beranda extends Controller
 {
-    public function tampiladmin(){
-        $fotos = foto::get();
-        return view('admin/admin/tampil_admin',compact('fotos'));
-        
+    public function showUploadForm()
+    {
+        return view('admin.tampiladmin');
+    }
+
+    public function tampiladmin(Request $request)
+    {
+        $request->validate([
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $photo = $request->file('photo');
+        $path = $photo->store('public/photos');
+
+        // Simpan path file dan data relevan lainnya ke database jika diperlukan
+
+        return redirect()->route('admin.showUploadForm')->with('success', 'Foto berhasil diupload!');
     }
     
 }
+    
+

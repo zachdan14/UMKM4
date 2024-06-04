@@ -62,9 +62,15 @@ Route::middleware(['auth', 'admin'])->controller(AdmuserController::class)->grou
     Route::get('/detailakun/admin/{id}', 'detailakun')->name('admin.detailakun');
     Route::get('/deleteakun/admin/{id}', 'deleteakun')->name('admin.deleteakun');
     Route::get('/delete/admin/{id}', 'delete')->name('admin.delete');
-    Route::get('/tampiladmin/admin', 'tampiladmin')->name('admin.tampiladmin');
+    Route::get('/tampiladmin/admin', 'tampiladmin')->name('admin.tampiladmin');// routes/web.php
+   
 });
 
 // pasya
 
     Route::get('/welcomepage', [WelcomepageController::class, 'index'])->name('welcomepage');
+    Route::get('/admin/tampiladmin', [Beranda::class, 'showUploadForm'])->name('admin.showUploadForm');
+    Route::get('/admin/tampiladmin', [Beranda::class, 'tampiladmin'])->name('admin.tampiladmin');
+   
+    
+    
