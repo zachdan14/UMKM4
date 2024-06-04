@@ -37,11 +37,11 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($data as $psn)
+                      @foreach ($users as $psn)
                       <tr>
                         <td>{{$psn->id}}</td>
                         <td>{{$psn->email}}</td>
-                        <td>{{$psn->nama_user}}</td>
+                        <td>{{$psn->name}}</td>
                         <td>{{$psn->status_aktif}}</td>
                         <td>{{$psn->status_publish}}</td>
                         <td>@if ($psn->updated_at != null)

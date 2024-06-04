@@ -12,13 +12,19 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $casta = [
+        "create_at"=> "datetime",
+        "deleted_at"=> "datetime",
+        "updated_at"=> "datetime"
+    ];
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'id', 'name', 'email', 'phone_number', 'password','active' , 'level', 'created_by', 'updated_by', 'deleted_by'
+        'id', 'name', 'email', 'phone_number', 'password','status_aktif','status_publish' , 'level','created_at', 'updated_at', 'deleted_at', 'created_by', 'updated_by', 'deleted_by'
     ];
 
     /**
