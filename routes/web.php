@@ -24,6 +24,13 @@ use App\Http\Controllers\Beranda;
 Route::get('/datacustomer', [DatacustomerController::class, 'index'])->name('datacustomer.index');
 Route::get('/form', [DatacustomerController::class, 'indexForm'])->name('datacustomer.form');
 Route::post('/datacustomer/store', [DatacustomerController::class, 'store'])->name('datacustomer.store');
+Route::get('/pemesanan', [DatacustomerController::class, 'pemesanan'])->name('admin.pemesanan');
+Route::get('/acc', [DatacustomerController::class, 'pemesananacc'])->name('admin.pemesananacc');
+Route::get('/process', [DatacustomerController::class, 'pemesananprocess'])->name('admin.pemesananprocess');
+Route::get('/done', [DatacustomerController::class, 'pemesanandone'])->name('admin.pemesanandone');
+Route::get('/tambahpesanan', [DatacustomerController::class, 'createpesanan'])->name('datacustomer.createpesanan');
+Route::post('/datacustomer/save', [DatacustomerController::class, 'savepesanan'])->name('datacustomer.savepesanan');
+
 
 
 // {{-- login (willy thing) --}}
@@ -47,7 +54,6 @@ Route::middleware(['auth'])->group(function () {
 
 // vania
 Route::middleware(['auth', 'admin'])->controller(AdmuserController::class)->group(function(){
-    route::get('/pemesanan', 'pemesanan')->name('admin.pemesanan');
     Route::get('/admin', 'index')->name('admin.index');
     Route::get('/tampildata/admin', 'tampildata')->name('admin.tampildata');
     Route::get('/histori/admin', 'histori')->name('admin.histori');
@@ -62,7 +68,7 @@ Route::middleware(['auth', 'admin'])->controller(AdmuserController::class)->grou
     Route::get('/detailakun/admin/{id}', 'detailakun')->name('admin.detailakun');
     Route::get('/deleteakun/admin/{id}', 'deleteakun')->name('admin.deleteakun');
     Route::get('/delete/admin/{id}', 'delete')->name('admin.delete');
-    Route::get('/tampiladmin/admin', 'tampiladmin')->name('admin.tampiladmin');// routes/web.php
+
    
 });
 

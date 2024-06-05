@@ -31,16 +31,18 @@
                     <a class="nav-link" href="http://127.0.0.1:8000/about"><i class="fa fa-commenting" aria-hidden="true"></i> About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-item user-icon"><i class="fas fa-user"></i></a>
+                    <a href="{{route('login')}}" class="nav-item user-icon"><i class="fas fa-user"></i></a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 
-<div class="huruf-1 container mt-5 pt-5">
-    <text>Ini Dia Fotografer Mari Jelajahi </text>
-    <img class="imagee pt-2" src="assets/contohh.jpeg" class="responsive" alt="Advertisement">
+<div class="mx-auto">
+    <div class="huruf-1 container pt-5">
+        <text>Ini Dia Fotografer Mari Jelajahi </text>
+        <img class="imagee pt-2" src="assets/contohh.jpeg" class="responsive" alt="Advertisement">
+    </div>
 </div>
 
 <div id="layanan" class="mt-5">
@@ -167,10 +169,11 @@ body {
     text-align: center;
     color: white;
     display: inline-block;
-    margin-top:20px;
+    margin-top:178px;
     font-size: 35px;
     font-family: 'Times New Roman', serif;
-
+    margin-left: 431px;
+    margin-bottom: 178px;
 }
 
 .imagee {
