@@ -23,48 +23,55 @@
    <div class="card">
       <div class="card-body">
          
-         <form action='{{ route("admin.updateakun", $data->id) }}' method="POST" autocomplete="off" class="needs-validation" novalidate>
+         <form action='{{ route("admin.updateakun", $users->id) }}' method="POST" autocomplete="off" class="needs-validation" novalidate>
              @csrf
 
              <div class="mb-3 row">
                <label for="id" class="col-sm-2 col-form-label">Id</label>
                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="id" value="{{$data->id}}" disabled>
+                  <input type="text" class="form-control" name="id" value="{{$users->id}}" disabled>
                </div>
             </div>
 
             <div class="mb-3 row">
                <label for="email" class="col-sm-2 col-form-label">Email</label>
                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="email" value="{{$data->email}}" disabled>
+                  <input type="text" class="form-control" name="email" value="{{$users->email}}" disabled>
                </div>
             </div>
 
             <div class="mb-3 row">
                <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="nama_user" value="{{$data->nama_user}}" disabled>
+                  <input type="text" class="form-control" name="name" value="{{$users->name}}" disabled>
                </div>
             </div>
 
             <div class="mb-3 row">
                <label for="password" class="col-sm-2 col-form-label">Password</label>
                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="password" value="{{$data->password}}" disabled>
+                  <input type="text" class="form-control" name="password" value="{{$users->password}}" disabled>
+               </div>
+            </div>
+
+            <div class="mb-3 row">
+               <label for="phone_number" class="col-sm-2 col-form-label">Phone Number</label>
+               <div class="col-sm-10">
+                  <input type="text" class="form-control" name="phone_number" value="{{$users->phone_number}}" disabled>
                </div>
             </div>
 
             <div class="mb-3 row">
                <label for="status_publish" class="col-sm-2 col-form-label">Status Publish</label>
                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="status_publish" value="{{$data->status_publish}}" disabled>
+                  <input type="text" class="form-control" name="status_publish" value="{{$users->status_publish}}" disabled>
                </div>
             </div>
 
             <div class="mb-3 row">
                <label for="status_aktif" class="col-sm-2 col-form-label">Status Aktif</label>
                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="status_aktif" value="{{$data->status_aktif}}" disabled>
+                  <input type="text" class="form-control" name="status_aktif" value="{{$users->status_aktif}}" disabled>
                </div>
             </div>
 

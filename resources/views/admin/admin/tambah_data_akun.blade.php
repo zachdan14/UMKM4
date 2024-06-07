@@ -36,7 +36,14 @@
             <div class="mb-3 row">
                <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="nama_user" placeholder="Isi Nama" required>
+                  <input type="text" class="form-control" name="name" placeholder="Isi Nama" required>
+               </div>
+            </div>
+
+            <div class="mb-3 row">
+               <label for="level" class="col-sm-2 col-form-label">Level</label>
+               <div class="col-sm-10">
+                  <input type="text" class="form-control" name="level" placeholder="Isi Level" required>
                </div>
             </div>
 
@@ -44,6 +51,13 @@
                <label for="password" class="col-sm-2 col-form-label">Password</label>
                <div class="col-sm-10">
                   <input type="text" class="form-control" name="password" placeholder="Isi Password" required>
+               </div>
+            </div>
+
+            <div class="mb-3 row">
+               <label for="phone_number" class="col-sm-2 col-form-label">Phone Number</label>
+               <div class="col-sm-10">
+                  <input type="text" class="form-control" name="phone_number" placeholder="Isi Number" required>
                </div>
             </div>
 
@@ -58,17 +72,7 @@
                </div>
             </div>
 
-            <div class="mb-3 row">
-               <label for="status_aktif" class="col-sm-2 col-form-label">Status Aktif</label>
-               <div class="col-sm-10">
-                  <select class="form-control" name="status_aktif" required>
-                  <option></option>
-                  <option value="Aktif">Aktif</option> 
-                  <option value="Hapus">Hapus</option>
-                  </select>
-               </div>
-            </div>
-
+            <input name="status_aktif" value="Aktif" type="hidden">
             <input name="created_by" value="1" type="hidden">
 
             <button class="btn btn-danger mt-2" type="Reset">Reset form</button>

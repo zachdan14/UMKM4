@@ -24,51 +24,6 @@
       <div class="card-body">
         <form action='#' method="POST" autocomplete="off" class="needs-validation" novalidate>
              @csrf
-
-             <div class="mb-3 row">
-               <label for="id" class="col-sm-2 col-form-label">Id</label>
-               <div class="col-sm-10">
-                  <input type="text" class="form-control" name="id" value="" disabled>
-               </div>
-            </div>
-
-            <div class="mb-3 row">
-               <label for="email" class="col-sm-2 col-form-label">Email</label>
-               <div class="col-sm-10">
-                  <input type="text" class="form-control" name="email" value="" disabled>
-               </div>
-            </div>
-
-            <div class="mb-3 row">
-               <label for="nama" class="col-sm-2 col-form-label">Nama</label>
-               <div class="col-sm-10">
-                  <input type="text" class="form-control" name="nama_user" value="" disabled>
-               </div>
-            </div>
-
-            <div class="mb-3 row">
-               <label for="password" class="col-sm-2 col-form-label">Password</label>
-               <div class="col-sm-10">
-                  <input type="text" class="form-control" name="password" value="" disabled>
-               </div>
-            </div>
-
-            <div class="mb-3 row">
-               <label for="status_publish" class="col-sm-2 col-form-label">Status Publish</label>
-               <div class="col-sm-10">
-                  <input type="text" class="form-control" name="status_publish" value="" disabled>
-               </div>
-            </div>
-
-            <div class="mb-3 row">
-               <label for="status_aktif" class="col-sm-2 col-form-label">Status Aktif</label>
-               <div class="col-sm-10">
-                  <input type="text" class="form-control" name="status_aktif" value="" disabled>
-               </div>
-            </div>
-
-            <a href="#" class="btn btn-danger mt-2">Batal</a>
-
          </form>
       </div>
    </div>

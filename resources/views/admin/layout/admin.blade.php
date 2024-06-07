@@ -100,7 +100,7 @@
         <div class="info">
           <a href="#" class="d-block" style="text-decoration:none, ">{{ Auth::user()->name }}</a>
           <a href="#" class="d-block" style="text-decoration:none, ">{{ Auth::user()->email }}</a>
-          <a href="#" class="d-block" style="text-decoration:none, ">{{ Auth::user()->password }}</a>
+          <a href="{{ route('logout') }}" class="nav-link">Logout</a>
         </div>
         {{-- <div class="carousel-caption">
             <div class="info">
@@ -153,19 +153,19 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('admin.pemesanan') }}" class="nav-link">
+                <a href="{{ route('admin.pemesananacc') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Acc</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('admin.pemesananprocess') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Process</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('admin.pemesanandone') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Done</p>
                 </a>

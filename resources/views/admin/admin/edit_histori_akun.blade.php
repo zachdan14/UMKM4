@@ -23,27 +23,34 @@
    <div class="card">
       <div class="card-body">
          
-         <form action='{{ route("admin.coveryakun", $data->id) }}' method="POST" autocomplete="off" class="needs-validation" novalidate>
+         <form action='{{ route("admin.coveryakun", $users->id) }}' method="POST" autocomplete="off" class="needs-validation" novalidate>
              @csrf
              @method('PUT')
             <div class="mb-3 row">
                <label for="email" class="col-sm-2 col-form-label">Email</label>
                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="email" placeholder="Isi Email" value="{{$data->email}}" required>
+                  <input type="text" class="form-control" name="email" placeholder="Isi Email" value="{{$users->email}}" required>
                </div>
             </div>
 
             <div class="mb-3 row">
                <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="nama_user" placeholder="Isi Nama" value="{{$data->nama_user}}" required>
+                  <input type="text" class="form-control" name="name" placeholder="Isi Nama" value="{{$users->name}}" required>
                </div>
             </div>
 
             <div class="mb-3 row">
                <label for="password" class="col-sm-2 col-form-label">Password</label>
                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="password" placeholder="Isi Password" value="{{$data->password}}" required>
+                  <input type="text" class="form-control" name="password" placeholder="Isi Password" value="{{$users->password}}" required>
+               </div>
+            </div>
+            
+            <div class="mb-3 row">
+               <label for="phone_number" class="col-sm-2 col-form-label">Phone Number</label>
+               <div class="col-sm-10">
+                  <input type="text" class="form-control" name="phone_number" placeholder="Isi Number" value="{{$users->phone_number}}" required>
                </div>
             </div>
 
@@ -51,7 +58,7 @@
                <label for="status_publish" class="col-sm-2 col-form-label">Status Publish</label>
                <div class="col-sm-10">
                   <select class="form-control" name="status_publish" required>
-                  <option value="{{$data->status_publish}}">{{$data->status_publish}}</option>
+                  <option value="{{$users->status_publish}}">{{$users->status_publish}}</option>
                   <option value="Publish">Publish</option> 
                   <option value="Draft">Draft</option>
                   </select>

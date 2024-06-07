@@ -219,7 +219,7 @@
                     <div class="row mb-3">
                         <label for="" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-6">
-                            <button type="submit"  class="submit btn btn-sm btn-primary mt-5" >Pesan</button>
+                            <button type="submit"  class="submit btn btn-sm btn-primary mt-5" ><a href="href=" {{ route('home') }}></a>Pesan</button>
                         </div>
                     </div>
                 </div>

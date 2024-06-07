@@ -5,6 +5,8 @@ use App\Http\Controllers\DatacustomerController;
 use App\Http\Controllers\AdmuserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\WelcomepageController;
+use App\Http\Controllers\Beranda;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +25,13 @@ Route::get('/datacustomer', [DatacustomerController::class, 'index'])->name('dat
 Route::get('/form', [DatacustomerController::class, 'indexForm'])->name('datacustomer.form');
 Route::get('/tampilpemesanan', [DatacustomerController::class, 'indexPemesanan'])->name('admin.pemesanan');
 Route::post('/datacustomer/store', [DatacustomerController::class, 'store'])->name('datacustomer.store');
-// Route::get('/tambah_pemesanan', [DatacustomerController::class, 'indexPesanan'])->name('datacustomer.tambahpemesanan');
+Route::get('/pemesanan', [DatacustomerController::class, 'pemesanan'])->name('admin.pemesanan');
+Route::get('/acc', [DatacustomerController::class, 'pemesananacc'])->name('admin.pemesananacc');
+Route::get('/process', [DatacustomerController::class, 'pemesananprocess'])->name('admin.pemesananprocess');
+Route::get('/done', [DatacustomerController::class, 'pemesanandone'])->name('admin.pemesanandone');
+Route::get('/tambahpesanan', [DatacustomerController::class, 'createpesanan'])->name('datacustomer.createpesanan');
+Route::post('/datacustomer/save', [DatacustomerController::class, 'savepesanan'])->name('datacustomer.savepesanan');
+
 
 
 // {{-- login (willy thing) --}}
@@ -33,7 +41,7 @@ Route::post('/login-proses', [LoginController::class, 'login_proses'])->name('lo
 Route::get('/register', [LoginController::class, 'register'])->name('register');
 Route::post('/register-proses', [LoginController::class, 'register_proses'])->name('register.proses');
 // log out
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 // biar saat login auto ke halaman masing-masing
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/home', function () {
@@ -61,10 +69,15 @@ Route::middleware(['auth', 'admin'])->controller(AdmuserController::class)->grou
     Route::get('/detailakun/admin/{id}', 'detailakun')->name('admin.detailakun');
     Route::get('/deleteakun/admin/{id}', 'deleteakun')->name('admin.deleteakun');
     Route::get('/delete/admin/{id}', 'delete')->name('admin.delete');
-    // zachdan
-    Route::get('/deletepemesanan/admin/{id}', 'deletepemesanan')->name('admin.deletepemesanan');
-    Route::get('/createpemesanan/admin', 'createpemesanan')->name('admin.createpemesanan');
-    
+
+   
 });
 
+// pasya
 
+    Route::get('/', [WelcomepageController::class, 'index'])->name('welcomepage');
+    Route::get('/admin/tampiladmin', [Beranda::class, 'showUploadForm'])->name('admin.showUploadForm');
+    Route::get('/admin/tampiladmin', [Beranda::class, 'tampiladmin'])->name('admin.tampiladmin');
+   
+    
+    

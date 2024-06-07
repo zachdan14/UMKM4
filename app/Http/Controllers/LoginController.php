@@ -87,10 +87,12 @@ class LoginController extends Controller
         ]);
             return redirect('login')->with('success', 'Registration successful, please check your phone for verification.');
     }
-    public function logout(Request $request) {
+    public function logout(Request $request) 
+    {
         $request->session()->flush();
+        // $request->session()->forget('email_user');
 
-        return redirect()->route('login');
+        return redirect('/login');
     }
     // //ini seingetku gk penting, cuma buat uji coba kayaknya
     // public function welcome_home() {
