@@ -185,6 +185,8 @@ class AdmuserController extends Controller
         return view('admin/admin/pemesanan_data',compact('data'));
     }
 
-    
+    public function createpemesanan(): View {
+        return view('admin/admin/tambah_pemesanan');
+    }
 
 }

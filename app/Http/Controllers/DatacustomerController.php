@@ -26,6 +26,11 @@ class DatacustomerController extends Controller
         return view('form');
     }
 
+    public function indexPemesanan(): View
+    {
+        return view('admin.admin.pemesanan_data');
+    }
+
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -38,10 +43,10 @@ class DatacustomerController extends Controller
             'tanggal' => 'required|date'
         ]);
 
-        // Generate unique idpesanan
+        // Generate unique idpesanan\
         $id_user = Str::uuid()->toString();
 
-        $datacustomer = Datacustomer::create([
+        $datacustomers = Datacustomer::create([
             'id_user' => $id_user, // Assign generated idpesanan
             'nama_user' => $request->nama_user,
             'email' => $request->email,

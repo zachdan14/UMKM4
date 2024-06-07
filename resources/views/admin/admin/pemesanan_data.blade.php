@@ -26,7 +26,7 @@
               <div class="col-auto me-auto">
               </div>
               <div class="col-auto">
-                <a href="{{ route('admin.createakun') }}" class="btn btn-danger">
+                <a href="{{ route('admin.createpemesanan') }}" class="btn btn-danger">
                     <i class="nav-icon fas fa-plus"></i>
                     Tambah Pemesanan
                 </a>
@@ -49,16 +49,16 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($data as $psn)
+                      @foreach ($datacustomer as $dt)
                       <tr>
-                        <td>{{$psn->id_user}}</td>
-                        <td>{{$psn->nama_user}}</td>
-                        <td>{{$psn->alamat}}</td>
-                        <td>{{$psn->kontak}}</td>
-                        <td>{{$psn->tipe_layanan}}</td>
-                        <td>{{$psn->status_pemesanan}}</td>
-                        <td>{{$psn->tanggal}}</td>
-                        <td>{{$psn->nama_user}}</td>
+                        <td>{{$dt->id_user}}</td>
+                        <td>{{$dt->nama_user}}</td>
+                        <td>{{$dt->alamat}}</td>
+                        <td>{{$dt->kontak}}</td>
+                        <td>{{$dt->tipe_layanan}}</td>
+                        <td>{{$dt->status_pemesanan}}</td>
+                        <td>{{$dt->tanggal}}</td>
+                        <td>{{$dt->nama_user}}</td>
                         <td><a href="{{ route('datacustomer.index') }}" class="btn btn-primary btn-sm" role="button">
                             <i class="bi bi-eye"></i>
                         </a>

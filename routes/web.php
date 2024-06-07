@@ -21,7 +21,9 @@ use App\Http\Controllers\adminController;
 // zachdan
 Route::get('/datacustomer', [DatacustomerController::class, 'index'])->name('datacustomer.index');
 Route::get('/form', [DatacustomerController::class, 'indexForm'])->name('datacustomer.form');
+Route::get('/tampilpemesanan', [DatacustomerController::class, 'indexPemesanan'])->name('admin.pemesanan');
 Route::post('/datacustomer/store', [DatacustomerController::class, 'store'])->name('datacustomer.store');
+// Route::get('/tambah_pemesanan', [DatacustomerController::class, 'indexPesanan'])->name('datacustomer.tambahpemesanan');
 
 
 // {{-- login (willy thing) --}}
@@ -59,5 +61,10 @@ Route::middleware(['auth', 'admin'])->controller(AdmuserController::class)->grou
     Route::get('/detailakun/admin/{id}', 'detailakun')->name('admin.detailakun');
     Route::get('/deleteakun/admin/{id}', 'deleteakun')->name('admin.deleteakun');
     Route::get('/delete/admin/{id}', 'delete')->name('admin.delete');
+    // zachdan
+    Route::get('/deletepemesanan/admin/{id}', 'deletepemesanan')->name('admin.deletepemesanan');
+    Route::get('/createpemesanan/admin', 'createpemesanan')->name('admin.createpemesanan');
+    
 });
+
 

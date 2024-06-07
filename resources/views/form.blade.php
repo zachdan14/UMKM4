@@ -159,8 +159,13 @@
             </div>
             <div class="form-group">
                 <label for="kontak">Nomor WhatsApp:</label>
-                <input type="text" id="kontak" name="kontak" placeholder="Masukkan nomor WhatsApp" required>
+                <input type="text" id="kontak" name="kontak" placeholder="Masukkan nomor WhatsApp" required oninput="validateNumber(this)">
             </div>
+            <script>
+                function validateNumber(input) {
+                    input.value = input.value.replace(/\D/g, '');
+                }
+                </script>
                     <div class="form-group" action="process.php"method="post">
                     <?php
                     // Ambil tanggal saat ini
