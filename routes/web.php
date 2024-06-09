@@ -25,6 +25,7 @@ Route::get('/datacustomer', [DatacustomerController::class, 'index'])->name('dat
 Route::get('/form', [DatacustomerController::class, 'indexForm'])->name('datacustomer.form');
 Route::get('/datacustomer/editPesanan/{id_user}', [DatacustomerController::class, 'editPesanan'])->name('datacustomer.edit');
 Route::put('/datacustomer/updatePesanan/{id_user}', [DatacustomerController::class, 'updatePesanan'])->name('datacustomer.update');
+Route::delete('/datacustomer/deletePesanan/{id_user}', [DatacustomerController::class, 'deletePesanan'])->name('datacustomer.delete');
 // Route::get('/tampilpemesanan', [DatacustomerController::class, 'indexPemesanan'])->name('admin.pemesanan');
 Route::post('/datacustomer/store', [DatacustomerController::class, 'store'])->name('datacustomer.store');
 Route::get('/pemesanan', [DatacustomerController::class, 'pemesanan'])->name('admin.pemesanan');

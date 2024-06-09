@@ -146,6 +146,12 @@ class DatacustomerController extends Controller
     
         return redirect()->route('admin.pemesanan')->with('success', 'Data Berhasil Diubah!');
     }
+
+    public function deletePesanan($id_user) {
+        Datacustomer::where('id_user', $id_user)->delete();
+        return redirect()->route('admin.histori')->with('success', 'Data Berhasil Dihapus!');
+    }
+    
     
     
 }
