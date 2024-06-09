@@ -62,7 +62,7 @@
                         <td>{{ $dt->tanggal }}</td>
                         <td>{{ $dt->nama_user }}</td>
                         <td>
-                            <a href="{{ route('datacustomer.index') }}" class="btn btn-primary btn-sm" role="button">
+                            <a href="{{ route('datacustomer.detail', $dt->id_user) }}" class="btn btn-primary btn-sm" role="button">
                                 <i class="bi bi-eye"></i>
                             </a>
                             <a href="{{ route('datacustomer.edit', $dt->id_user) }}" class="btn btn-success btn-sm" role="button">
