@@ -23,7 +23,9 @@ use App\Http\Controllers\Beranda;
 // zachdan
 Route::get('/datacustomer', [DatacustomerController::class, 'index'])->name('datacustomer.index');
 Route::get('/form', [DatacustomerController::class, 'indexForm'])->name('datacustomer.form');
-Route::get('/tampilpemesanan', [DatacustomerController::class, 'indexPemesanan'])->name('admin.pemesanan');
+Route::get('/datacustomer/editPesanan/{id_user}', [DatacustomerController::class, 'editPesanan'])->name('datacustomer.edit');
+Route::put('/datacustomer/updatePesanan/{id_user}', [DatacustomerController::class, 'updatePesanan'])->name('datacustomer.update');
+// Route::get('/tampilpemesanan', [DatacustomerController::class, 'indexPemesanan'])->name('admin.pemesanan');
 Route::post('/datacustomer/store', [DatacustomerController::class, 'store'])->name('datacustomer.store');
 Route::get('/pemesanan', [DatacustomerController::class, 'pemesanan'])->name('admin.pemesanan');
 Route::get('/acc', [DatacustomerController::class, 'pemesananacc'])->name('admin.pemesananacc');

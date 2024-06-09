@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Datacustomer;
 use Illuminate\View\View;
 use Illuminate\Support\Str;
+use Illuminate\Http\RedirectResponse;
 
 class DatacustomerController extends Controller
 {
@@ -114,4 +115,37 @@ class DatacustomerController extends Controller
 
         return redirect()->route('home')->with('success', 'Data Berhasil Ditambah!');
     }
+
+    public function editPesanan($id_user): View {
+        $users = Datacustomer::where('id_user', $id_user)->firstOrFail();
+        return view('admin/admin/edit_pemesanan', compact('users'));
+    }
+
+    public function updatePesanan(Request $request, $id_user): RedirectResponse {
+        $request->validate([
+            'nama_user' => 'required',
+            'email' => 'required|email|unique:datacustomers,email,' . $id_user . ',id_user', // Ensure email is unique but allow current email
+            'kontak' => 'required',
+            'alamat' => 'required',
+            'pembayaran' => 'required',
+            'tipe_layanan' => 'required',
+            'tanggal' => 'required|date|after_or_equal:today' // Ensure the date is today or in the future
+        ]);
+    
+        $users = Datacustomer::where('id_user', $id_user)->firstOrFail();
+    
+        $users->update([
+            'nama_user' => $request->nama_user,
+            'email' => $request->email,
+            'kontak' => $request->kontak,
+            'alamat' => $request->alamat,
+            'pembayaran' => $request->pembayaran,
+            'tipe_layanan' => $request->tipe_layanan,
+            'tanggal' => $request->tanggal,
+        ]);
+    
+        return redirect()->route('admin.pemesanan')->with('success', 'Data Berhasil Diubah!');
+    }
+    
+    
 }

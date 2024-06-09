@@ -23,7 +23,7 @@
    <div class="card">
       <div class="card-body">
          
-         <form action='{{ route("datacustomer.store") }}' method="POST" autocomplete="off" class="needs-validation" novalidate>
+         <form action='{{ route("datacustomer.savepesanan") }}' method="POST" autocomplete="off" class="needs-validation" novalidate>
              @csrf
             
             <div class="mb-3 row">

@@ -23,27 +23,27 @@
    <div class="card">
       <div class="card-body">
          
-         <form action='{{ route("admin.updateakun", $data->id) }}' method="POST" autocomplete="off" class="needs-validation" novalidate>
-             @csrf
-             @method('PUT')
+         <form action="{{ route('datacustomer.update', $users->id_user) }}" method="POST" autocomplete="off" class="needs-validation" novalidate>
+            @csrf
+            @method('PUT')
              <div class="mb-3 row">
                 <label for="nama_user" class="col-sm-2 col-form-label">Username</label>
                 <div class="col-sm-10">
-                   <input type="text" class="form-control" name="nama_user" placeholder="Isi Username" value="{{$data->nama_user}}" required>
+                   <input type="text" class="form-control" name="nama_user" placeholder="Isi Username" value="{{$users->nama_user}}" required>
                 </div>
              </div>
  
              <div class="mb-3 row">
                 <label for="email" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
-                   <input type="text" class="form-control" name="email" placeholder="Isi Email" value="{{$data->email}}" required>
+                   <input type="text" class="form-control" name="email" placeholder="Isi Email" value="{{$users->email}}" required>
                 </div>
              </div>
  
              <div class="mb-3 row">
                 <label for="kontak" class="col-sm-2 col-form-label">No Handphone</label>
                 <div class="col-sm-10">
-                   <input type="text" class="form-control" name="kontak" placeholder="Isi Password" value="{{$data->kontak}}" required>
+                   <input type="text" class="form-control" name="kontak" placeholder="Isi Password" value="{{$users->kontak}}" required>
                 </div>
              </div>
  
@@ -68,15 +68,15 @@
                  ?>
                  <label for="tanggal" class="col-sm-2 col-form-label">Tanggal Booking</label>
                  <div class="col-sm-10">
-                    <input type="date" class="form-control" name="tanggal" value="{{$data->tanggal}}" required>
+                    <input type="date" class="form-control" name="tanggal" value="{{$users->tanggal}}" required>
                  </div>
               </div>
  
              <div class="mb-3 row">
                 <label for="tipe_layanan" class="col-sm-2 col-form-label">Layanan</label>
                 <div class="col-sm-10">
-                   <select class="form-control" name="tipe_layanan" value="{{$data->tipe_layanan}}" required>
-                   <option></option>
+                   <select class="form-control" name="tipe_layanan" value="{{$users->tipe_layanan}}" required>
+                   <option>{{$users->tipe_layanan}}</option>
                    <option value="Publish">Prewedding</option> 
                    <option value="Draft">Foto Wisuda</option>
                    <option value="Draft">Mahasiswa/Siswa</option>
@@ -88,15 +88,15 @@
               <div class="mb-3 row">
                  <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
                  <div class="col-sm-10">
-                    <input type="text" class="form-control" name="alamat" placeholder="Isi Keterangan Alamat" value="{{$data->alamat}}" required>
+                    <input type="text" class="form-control" name="alamat" placeholder="Isi Keterangan Alamat" value="{{$users->alamat}}" required>
                     </div>
                 </div>
  
               <div class="mb-3 row">
                  <label for="pembayaran" class="col-sm-2 col-form-label">Pembayaran</label>
                  <div class="col-sm-10">
-                    <select class="form-control" name="pembayaran" value="{{$data->pembayaran}}" required>
-                    <option></option>
+                    <select class="form-control" name="pembayaran" value="{{$users->pembayaran}}" required>
+                    <option>{{$users->pembayaran}}</option>
                     <option value="Publish">Qris</option> 
                     <option value="Draft">COD (Cash on Delivery)</option>
                     </select>
