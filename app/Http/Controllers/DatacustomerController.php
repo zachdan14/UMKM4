@@ -98,7 +98,6 @@ class DatacustomerController extends Controller
             'alamat' => 'required',
             'pembayaran' => 'required',
             'tipe_layanan' => 'required',
-            'status_pemesanan' => 'required',
             'tanggal' => 'required|date'
         ]);
 
@@ -113,6 +112,7 @@ class DatacustomerController extends Controller
             'alamat' => $request->alamat,
             'status_pembayaran' => $request->status_pembayaran,
             'pembayaran' => $request->pembayaran,
+            'status_pemesanan' => $request->status_pemesanan,
             'tipe_layanan' => $request->tipe_layanan,
             'tanggal' => $request->tanggal,
         ]);

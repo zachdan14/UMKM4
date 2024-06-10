@@ -148,6 +148,16 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <div class="payment-form">
+
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
             <h3>Form Pemesanan</h3>
             <div class="form-group">
                 <label for="nama_user">Nama Lengkap:</label>
@@ -223,7 +233,7 @@
                         </div>
                     </div>
                 </div>
-                <input type="hidden" value="Message" name="status_pembayaran">
+                <input type="hidden" value="Message" name="status_pemesanan">
             </form>
             </div>
         </body>
