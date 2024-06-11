@@ -3,7 +3,7 @@
 @extends('admin.layout.admin')
 
 @section('content')
-<!-- <style>
+<style>
         table {
             width: 100%;
             border-collapse: collapse;
@@ -45,7 +45,7 @@
             </tr>
             <!-- Tambahkan baris lain sesuai dengan data yang Anda miliki -->
         </tbody>
-    </table> -->
+    </table>
 <div class="content-wrapper">
     <div class="content-header">
         <div class="container-fluid">
@@ -69,20 +69,27 @@
             @endif
             <div class="form-group">
                         <label for="" class="font-weight-bold">Foto Produk</label>
-                        <input type="file" class="form-control @error('foto_produk') is-invalid @enderror" name="foto_produk">
-                        @error('foto_produk')
+                        <input type="file" class="form-control @error('image') is-invalid @enderror" name="image">
+                        @error('image')
                         <div class="alert alert-danger mt-2">
                         {{ $message }}
                         </div>
                         @enderror
                       </div>
-            <form action="{{ route('admin.tampiladmin') }}" method="PUT" enctype="multipart/form-data">
+            <!-- <form action="{{ route('admin.tampiladmin') }}" method="PUT" enctype="multipart/form-data">
                 @csrf
+                <div class="form-group">
+                    <label for="photo">Pilih Foto</label>
+                    <input type="file" name="photo" id="photo" class="form-control @error('photo') is-invalid @enderror">
+                    @error('photo')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
                 <button type="submit" class="btn btn-primary">Upload</button>
-            </form>
+            </form> -->
         </div>
-    </div>
-</div>
     </div>
 </div>
 @endsection

@@ -21,6 +21,8 @@ return new class extends Migration
             $table->enum('pembayaran', ['qris', 'cod']);
             $table->enum('tipe_layanan', ['Prewedding', 'Foto Wisuda', 'Mahasiswa/Siswa', 'Lainnya']);
             $table->date('tanggal');
+            $table->enum('status_pemesanan', ['Message', 'Acc', 'Process', 'Done']);
+            $table->timestamps();
         });
     }
 

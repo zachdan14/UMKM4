@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use App\Models\Admin;
 use App\Models\Datacustomer;
@@ -55,7 +56,7 @@ class AdmuserController extends Controller
             'email' => $eml,
             'level' => $request->level,
             'name' => $request->name,
-            'password' => $request->password,
+            'password' => hash::make('$request->password'),
             'phone_number' => $request->phone_number,
             'status_aktif' => $request->status_aktif,
             'status_publish' => $request->status_publish,
@@ -90,7 +91,7 @@ class AdmuserController extends Controller
             'id'=> $request->id,
             'email' => $eml,
             'name' => $request->name,
-            'password' => $request->password,
+            'password' => hash::make('$request->password'),
             'phone_number' => $request->phone_number,
             'status_aktif' => $request->status_aktif,
             'status_publish' => $request->status_publish,
@@ -117,7 +118,7 @@ class AdmuserController extends Controller
         'id'=> $request->id,
         'email' => $eml,
         'name' => $request->name,
-        'password' => $request->password,
+        'password' => hash::make('$request->password'),
         'phone_number' => $request->phone_number,
         'status_aktif' => $request->status_aktif,
         'status_publish' => $request->status_publish,
@@ -143,7 +144,7 @@ class AdmuserController extends Controller
         'id'=> $request->id,
         'email' => $eml,
         'name' => $request->name,
-        'password' => $request->password,
+        'password' => hash::make('$request->password'),
         'phone_number' => $request->phone_number,
         'status_aktif' => $request->status_aktif,
         'status_publish' => $request->status_publish,
