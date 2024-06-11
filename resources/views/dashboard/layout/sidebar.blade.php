@@ -128,39 +128,12 @@
                with font-awesome or any other icon font library -->
           
             <li class="nav-item">
-                <a href="{{ route('admin.tampildata') }}" class="nav-link">
+                <a href="{{ route('dashboard.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-user"></i>
                     <p>
                         Data User
                     </p>
                 </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="" class="nav-link">
-                    <i class="nav-icon fas fa-copy"></i>
-                <p>Orders <i class="fas fa-angle-left right"></i></p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="route history pesanan" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                        <p>History Pesanan</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="route status pesanan" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                        <p>Status Pesanan</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="route ulasan" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                        <p>Ulasanmu kepada kami</p>
-                        </a>
-                    </li>
-                </ul>
             </li>
         </ul>
       </nav>

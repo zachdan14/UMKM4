@@ -52,7 +52,7 @@ class LoginController extends Controller
                 return redirect()->route('admin.index');
             } else {
                 // kalo level user masuk ke tampilan user
-                return redirect()->route('home');
+                return redirect()->route('dashboard.index');
             }
         } else {
             // kalo email atau password salah

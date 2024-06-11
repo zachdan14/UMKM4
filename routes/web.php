@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\WelcomepageController;
 use App\Http\Controllers\Beranda;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,14 +48,13 @@ Route::post('/register-proses', [LoginController::class, 'register_proses'])->na
 // log out
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 // biar saat login auto ke halaman masing-masing
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->controller(HomeController::class)->group(function () {
     Route::get('/admin/home', function () {
         return view('admin.home'); // admin
     })->name('admin.home');
-    Route::get('/home', function () {
-        return view('dashboard.index'); // user
-    })->name('home');
+    Route::get('/dashboard', 'index')->name('dashboard.index');
 });
+
 // ^^^willy thing^^^
 
 // vania

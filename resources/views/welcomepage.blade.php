@@ -102,7 +102,7 @@
                     <a href="/about"class="nav-link"> About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-item user-icon"><i class="fas fa-user"></i></a>
+                    <a href="{{route('dashboard.index')}}" class="nav-item user-icon"><i class="fas fa-user"></i></a>
                 </li>
             </ul>
         </div>

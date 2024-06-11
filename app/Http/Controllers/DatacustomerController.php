@@ -117,7 +117,7 @@ class DatacustomerController extends Controller
             'tanggal' => $request->tanggal,
         ]);
 
-        return redirect()->route('home')->with('success', 'Data Berhasil Ditambah!');
+        return redirect()->route('dashboard.index')->with('success', 'Data Berhasil Ditambah!');
     }
 
     public function editPesanan($id_user): View {
