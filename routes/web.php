@@ -21,6 +21,11 @@ use App\Http\Controllers\HomeController;
 */
 
 
+Route::get('/page', function () {
+    return view('page');
+});
+
+
 // zachdan
 Route::get('/datacustomer', [DatacustomerController::class, 'index'])->name('datacustomer.index');
 Route::get('/form', [DatacustomerController::class, 'indexForm'])->name('datacustomer.form');
