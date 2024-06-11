@@ -47,15 +47,15 @@
                         <td>{{$dt->status_pemesanan}}</td>
                         <td>{{$dt->tanggal}}</td>
                         <td>{{$dt->nama_user}}</td>
-                        <td><a href="{{ route('datacustomer.index') }}" class="btn btn-primary btn-sm" role="button">
-                            <i class="bi bi-eye"></i>
-                        </a>
-                        <a href="" class="btn btn-success btn-sm" role="button">
-                            <i class="bi bi-pencil"></i>
-                        </a>
-                        <a href="" class="btn btn-danger btn-sm" role="button">
-                            <i class="bi bi-trash3"></i>
-                        </a></td>
+                        <td>
+                           <a href="{{ route('datacustomer.detail', $dt->id_user) }}" class="btn btn-primary btn-sm" role="button">
+                                <i class="bi bi-eye"></i>
+                            </a>
+                            <a href="{{ route('datacustomer.edit', $dt->id_user) }}" class="btn btn-success btn-sm" role="button">
+                                <i class="bi bi-pencil"></i>
+                            </a>
+                            <form action="{{ route('datacustomer.delete', $dt->id_user) }}" method="POST" style="display:inline;" onsubmit="return confirmDelete();">
+                          </td>
                       </tr>
                       @endforeach
                       

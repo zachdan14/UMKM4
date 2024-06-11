@@ -71,6 +71,19 @@
                     <input type="date" class="form-control" name="tanggal" value="{{$users->tanggal}}" required>
                  </div>
               </div>
+
+              <div class="mb-3 row">
+               <label for="status_pemesanan" class="col-sm-2 col-form-label">Status Pemesanan</label>
+               <div class="col-sm-10">
+                  <select class="form-control" name="status_pemesanan" value="{{$users->status_pemesanan}}" required>
+                  <option>{{$users->status_pemesanan}}</option>
+                  <option value="Message">Message</option> 
+                  <option value="Acc">Acc</option>
+                  <option value="Process">Process</option>
+                  <option value="Done">Done</option>
+                  </select>
+               </div>
+            </div>
  
              <div class="mb-3 row">
                 <label for="tipe_layanan" class="col-sm-2 col-form-label">Layanan</label>

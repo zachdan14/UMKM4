@@ -55,7 +55,7 @@ class DatacustomerController extends Controller
         'alamat' => 'required',
         'pembayaran' => 'required',
         'tipe_layanan' => 'required',
-        'status_pembayaran' => 'required',
+        'status_pemesanan' => 'required',
         'tanggal' => 'required|date'
     ]);
 
@@ -138,6 +138,7 @@ class DatacustomerController extends Controller
             'alamat' => 'required',
             'pembayaran' => 'required',
             'tipe_layanan' => 'required',
+            'status_pemesanan' => 'required',
             'tanggal' => 'required|date|after_or_equal:today' // Ensure the date is today or in the future
         ]);
     
@@ -150,6 +151,7 @@ class DatacustomerController extends Controller
             'alamat' => $request->alamat,
             'pembayaran' => $request->pembayaran,
             'tipe_layanan' => $request->tipe_layanan,
+            'status_pemesanan' => $request->status_pemesanan,
             'tanggal' => $request->tanggal,
         ]);
     
